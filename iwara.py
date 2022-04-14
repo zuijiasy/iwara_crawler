@@ -28,7 +28,4 @@ def iwaradownloader(url):
 if __name__ =='__main__':
     urls = ["https://ecchi.iwara.tv/users/m9F/videos" , "https://ecchi.iwara.tv/users/Ponkanman/videos"]
     for url in urls:
-        try:
-            iwaradownloader(url)
-        except OSError:
-            iwaradownloader(url)
+        iwaradownloader(url)
