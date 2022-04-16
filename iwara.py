@@ -27,11 +27,18 @@ def iwaradownloader(url):
         'proxy' : 'http://10.10.10.1:7890',
         'format' : 'best'
     }
-    with youtube_dl.YoutubeDL(ydl_opt) as ydl:
-        result = ydl.download(dlist)
+    for b in dlist:
+        try:
+            with youtube_dl.YoutubeDL(ydl_opt) as ydl:
+                result = ydl.download((b,))
+        except:
+            continue
 
 
 if __name__ =='__main__':
-    urls = ["https://ecchi.iwara.tv/users/m9F/videos" , "https://ecchi.iwara.tv/users/Ponkanman/videos"]
+    urls = ["https://ecchi.iwara.tv/users/xyz/videos" , "https://ecchi.iwara.tv/users/xyz/videos?page=1"]
     for url in urls:
-        iwaradownloader(url)
+        try:
+            iwaradownloader(url)
+        except:
+            continue
