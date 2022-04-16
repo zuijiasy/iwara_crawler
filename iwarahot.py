@@ -44,7 +44,10 @@ def iwaradownload(url,username):
 
 
 if __name__ =='__main__':
-    ilist = iwarahot()
+    ilist = iwarahot('https://oreno3d.com/?sort=hot')
     for a in ilist:
         b = hoturl(a)
-        iwaradownload((b[0],), b[1])
+        try:
+            iwaradownload((b[0],), b[1])
+        except:
+            continue
